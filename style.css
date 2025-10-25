@@ -198,5 +198,73 @@ footer {
   color: #b0b3b8;
   max-width: 100%;
 }
-
+/*Make the sidebar invisible by default*/
+#sidebar {
+  display: none;
+}
+/*RESPONSIVE DESIGN FOR SMALLER SCREEN WIDTH*/
+@media (max-width: 800px) {
+  /* make the name and menu icon stay beside each other*/
+  header {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+  }
+  /*Make the normal navigation links invisible on smaller screens*/
+  #normal-navLinks {
+    display: none;
+  }
+  /*STYLE NAV LINKS IN SIDEBAR*/
+  #sidebar nav {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin: 30px 0 0 30px;
+  }
+  /*STYLE SIDEBAR*/
+  #sidebar {
+    backdrop-filter: blur(50px) brightness(40%);
+    width: 50vw;
+    height: 100vw;
+    top: 0;
+    left: 0;
+    position: absolute;
+    z-index: 1000;
+    display: none;
+  }
+  /*ENSURE SIDEBAR SHOWS ON MENU ICON CLICK*/
+  .show {
+    display: block !important;
+  }
+  /*STYLE SPAN ELEMENT TO LOOK LIKE MENU ICON*/
+  #menuIcon span,
+  #cancelIcon span {
+    background-color: beige;
+    width: 30px;
+    height: 5px;
+    margin: 0 3px 5px 5px;
+    border-radius: 20px;
+  }
+  /*STYLE MENU ICON ITSELF*/
+  #menuIcon,
+  #cancelIcon {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+  /*STYLE CANCEL ICON INSIDE SIDEBAR*/
+  #cancelIcon {
+    margin: 20px;
+  }
+  /*MAKE SPAN FOR CANCEL ICON LOOK LIKE AN X SHAPE*/
+  #middlebar {
+    display: none;
+  }
+  #topbar {
+    transform: rotate(45deg) translate(7px);
+  }
+  #bottombar {
+    transform: rotate(-45deg) translate(7px);
+  }
+}
 /* You are free to use this template but please give credit to Scybud and Abdulroqib Oladipo */
