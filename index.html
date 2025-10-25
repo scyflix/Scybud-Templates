@@ -13,18 +13,101 @@
     <!--Add your name to the title-->
     <title>Your Name | Portfolio</title>
     <link rel="stylesheet" href="style.css" />
+    <style>
+    #sidebar {
+      display: none;
+    }
+      @media (max-width: 800px) {
+        header {
+          display: flex;
+          justify-content: flex-start;
+          gap:  10px;
+        }
+        #normal-navLinks {
+          display: none;
+        }
+        #sidebar nav {
+          display: flex;
+          flex-direction: column;
+        gap: 30px;
+        margin: 30px 0 0 30px;
+      }
+      #sidebar {
+        backdrop-filter: blur(50px) brightness(40%);
+        width: 50vw;
+        height: 100vw;
+        top: 0;
+        left: 0;
+        position: absolute;
+        z-index: 1000;
+      display: none;
+      }
+      .show {
+        display: block !important;
+      }
+       #menuIcon span{
+        background-color: beige;
+        width: 30px;
+        height: 5px;
+        margin: 0 3px 5px 5px;
+        border-radius: 20px;
+        
+      }
+      .cancelIcon {
+        margin: 20px;
+      }
+      #menuIcon {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+      }
+      #middlebar {
+        display: none;
+      }
+      #topbar {
+        transform: rotate(45deg) translate(7px);
+      }
+       #bottombar {
+         transform: rotate(-45deg) translate(7px);
+        }
+      }
+      </style>
   </head>
   <body>
+    <!--SIDEBAR FOR SMALLER SCREENS-->
+  </header>
+  <div id="sidebar">
+    <!--Sidebar icon-->
+      <div id="menuIcon" class="cancelIcon" onclick="togglesidebar()">
+        <span id="topbar"></span>
+        <span id="middlebar"></span>
+        <span id="bottombar"></span>
+      </div>
+      <!--Sidebar links-->
+    <nav>
+      <a onclick="togglesidebar()" href="#about">About</a>
+      <a onclick="togglesidebar()" href="#skills">Skills</a>
+      <a onclick="togglesidebar()" href="#projects">Projects</a>
+      <a onclick="togglesidebar()" href="#contact">Contact</a>
+    </nav>
+  </div>
     <!--HEADER-->
     <header>
+      <!--Sidebar icon-->
+      <div id="menuIcon" onclick="togglesidebar()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
       <!--Add your name to the header-->
       <h1>Your name</h1>
       <!--NAVIGATION-->
-      <nav>
-        <a href="#about">About</a> <a href="#skills">Skills</a>
-        <a href="#projects">Projects</a> <a href="#contact">Contact</a>
+      <nav id="normal-navLinks">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
       </nav>
-    </header>
     <!--MAIN SECTION-->
     <main>
       <!--HERO SECTION-->
@@ -111,6 +194,13 @@
     <footer>
       <p>&copy; Scybud Templates | Built by Abdulroqib Oladipo</p>
     </footer>
+    <script>
+      const sidebar = document.getElementById("sidebar");
+
+      function togglesidebar() {
+        sidebar.classList.toggle("show");
+      }
+    </script>
   </body>
 </html>
 <!-- You are free to use this template but please give credit to Scybud and Abdulroqib Oladipo -->
